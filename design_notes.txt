@@ -1,0 +1,15 @@
+- Testing strategy
+	- how to test after  each insert, search and delete
+- Design
+    - LinkedListRunner
+        - call 3 different list types.
+            - how to test read?
+
+        - capture execution times.
+    - List scheduler -- compute config for each thread
+        - should compute load for each thread the below patterns and their sizes
+            - I -> S
+            -
+- enum config
+    - percentage of inserts, deletes, searches that should happen across n threads
+

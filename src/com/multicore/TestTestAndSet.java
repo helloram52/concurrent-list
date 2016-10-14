@@ -2,19 +2,21 @@ package com.multicore;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/**
- * Created by vads on 9/18/16.
- */
-public class TestAndSet implements Lock {
+public class TestTestAndSet implements Lock {
   private volatile AtomicBoolean lockFlag;
 
-  public TestAndSet() {
+  public TestTestAndSet() {
     this.lockFlag = new AtomicBoolean();
   }
 
   @Override
   public void lock(int threadID) {
-    while ( lockFlag.getAndSet(true) == true );
+    while (true) {
+      while (lockFlag.get() == true);
+      if (lockFlag.getAndSet(true) == false) {
+        break;
+      }
+    }
   }
 
   @Override

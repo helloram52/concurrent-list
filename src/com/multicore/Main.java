@@ -13,7 +13,7 @@ public class Main {
 
             for (int j = 1;j <= processors;j++) {
                 Utils.log("Number of Processors: " + j);
-                new MutexRunner().run(j);
+                new ListRunner().run(j);
             }
         }
     }

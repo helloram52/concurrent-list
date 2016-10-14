@@ -1,6 +1,3 @@
-/*
- * Copyright (c) 2014 Cloudvisory LLC. All rights reserved.
- */
 package com.multicore;
 
 /**
@@ -8,7 +5,7 @@ package com.multicore;
  * that allows you to monitor the number of submitted, failed and succeeded task, plus has the
  * ability to wait until all tasks are completed = there are no scheduled or running tasks.
  *
- * Created by vads on 9/18/16.
+ * Created by Vadivel on 9/18/16.
  * -- Reused parts from https://github.com/MatejTymes/JavaFixes
  */
 import java.util.concurrent.Callable;

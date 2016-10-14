@@ -1,15 +1,8 @@
-/*
- * Copyright (c) 2014 Cloudvisory LLC. All rights reserved.
- */
 package com.multicore;
 
-import java.text.DecimalFormat;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * Created by vads on 9/18/16.
- */
-public class MutexRunner {
+public class ListRunner {
 
   public float startThreads(int n, Lock lock, AtomicInteger counter) {
     Runner runner = new Runner(n);
@@ -37,16 +30,8 @@ public class MutexRunner {
   }
 
   public void run(int n) {
-    Lock tournamentLock = new Tournament(n);
-    Utils.log("Tournament Algorithm:");
+    Lock tournamentLock = new TestTestAndSet();
+    Utils.log("Coarse Grain List:");
     startThreads(n, tournamentLock, new AtomicInteger());
-
-    Lock testAndSetLock = new TestAndSet();
-    Utils.log("TestAndSet Algorithm:");
-    startThreads(n, testAndSetLock, new AtomicInteger());
-
-    Lock testtestAndSetLock = new TestTestAndSet();
-    Utils.log("TestTestAndSet Algorithm:");
-    startThreads(n, testtestAndSetLock, new AtomicInteger());
   }
 }

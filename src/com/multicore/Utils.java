@@ -1,6 +1,3 @@
-/*
- * Copyright (c) 2014 Cloudvisory LLC. All rights reserved.
- */
 package com.multicore;
 
 import java.io.File;
@@ -17,9 +14,6 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-/**
- * Created by vads on 9/18/16.
- */
 public final class Utils {
   public static boolean debugFlag = true;
   private static Logger logger;

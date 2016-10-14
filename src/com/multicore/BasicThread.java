@@ -1,13 +1,7 @@
-/*
- * Copyright (c) 2014 Cloudvisory LLC. All rights reserved.
- */
 package com.multicore;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * Created by vads on 9/18/16.
- */
 public class BasicThread implements Runnable {
 
   public int getID() {
