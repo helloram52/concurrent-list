@@ -14,13 +14,17 @@ import java.util.logging.SimpleFormatter;
 
 public final class Utils {
 
-    private static final int SEARCH = 0;
-    private static final int INSERT = 1;
-    private static final int DELETE = 2;
-    private static final String INSERT_STRING = "insert";
-    private static final String SEARCH_STRING = "search";
-    private static final String DELETE_STRING = "delete";
-    private static List<int[]> taskList = new ArrayList<>();
+    static final int SEARCH = 0;
+    static final int INSERT = 1;
+    static final int DELETE = 2;
+    static final String INSERT_STRING = "insert";
+    static final String SEARCH_STRING = "search";
+    static final String DELETE_STRING = "delete";
+    static List<int[]> taskList = new ArrayList<>();
+
+    static int[] getTask(int index) {
+        return taskList.get(index);
+    }
 
     static int getTaskID(String task) {
         if( task.equals(INSERT_STRING) ) {
@@ -196,7 +200,6 @@ public final class Utils {
         }
         else {
             int tasksPerThread = (numberOfTasks%numberOfThreads != 0)? (numberOfTasks/numberOfThreads)+1: numberOfTasks/numberOfThreads;
-            System.out.println(tasksPerThread);
             int startPos = 0, endPos=tasksPerThread-1;
 
             for( int i=0; i<numberOfThreads; i++ ) {
@@ -219,12 +222,3 @@ public final class Utils {
     }
 }
 
-class Range {
-    int x;
-    int y;
-
-    Range(int i, int j) {
-        x=i;
-        y=j;
-    }
-}

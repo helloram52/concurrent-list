@@ -10,7 +10,7 @@ public class TestTestAndSet implements Lock {
   }
 
   @Override
-  public void lock(int threadID) {
+  public void lock() {
     while (true) {
       while (lockFlag.get() == true);
       if (lockFlag.getAndSet(true) == false) {
@@ -20,7 +20,7 @@ public class TestTestAndSet implements Lock {
   }
 
   @Override
-  public void unlock(int threadID) {
+  public void unlock() {
     lockFlag.set(false);
   }
 }

@@ -12,7 +12,7 @@ public abstract class BasicLinkedList {
     tail.next = null;
   }
 
-  public abstract void insert();
-  public abstract void delete();
-  public abstract void search();
+  public abstract void insert(int key);
+  public abstract void delete(int key);
+  public abstract void search(int key);
 }

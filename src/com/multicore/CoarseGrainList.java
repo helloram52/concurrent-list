@@ -5,18 +5,26 @@ public class CoarseGrainList extends BasicLinkedList {
     super();
   }
 
-  @Override
-  public void insert() {
+  Lock lock;
 
+  CoarseGrainList(Lock lock) {
+    this.lock = lock;
   }
 
   @Override
-  public void delete() {
-
+  public void insert(int key) {
+    lock.lock();
+    lock.unlock();
   }
 
   @Override
-  public void search() {
+  public void delete(int key) {
+    lock.lock();
+    lock.unlock();
+  }
+
+  @Override
+  public void search(int key) {
 
   }
 }

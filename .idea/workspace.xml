@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35910a6d-3506-4341-94f4-79d584108b1e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/multicore/Range.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run.log" afterPath="$PROJECT_DIR$/run.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/multicore/BasicLinkedList.java" afterPath="$PROJECT_DIR$/src/com/multicore/BasicLinkedList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/multicore/BasicThread.java" afterPath="$PROJECT_DIR$/src/com/multicore/BasicThread.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/multicore/CoarseGrainList.java" afterPath="$PROJECT_DIR$/src/com/multicore/CoarseGrainList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/multicore/FineGrainList.java" afterPath="$PROJECT_DIR$/src/com/multicore/FineGrainList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/multicore/ListRunner.java" afterPath="$PROJECT_DIR$/src/com/multicore/ListRunner.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/multicore/Lock.java" afterPath="$PROJECT_DIR$/src/com/multicore/Lock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/multicore/Main.java" afterPath="$PROJECT_DIR$/src/com/multicore/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/multicore/LockFreeList.java" afterPath="$PROJECT_DIR$/src/com/multicore/LockFreeList.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/multicore/RunParameters.java" afterPath="$PROJECT_DIR$/src/com/multicore/RunParameters.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/multicore/TestTestAndSet.java" afterPath="$PROJECT_DIR$/src/com/multicore/TestTestAndSet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/multicore/Utils.java" afterPath="$PROJECT_DIR$/src/com/multicore/Utils.java" />
     </list>
     <ignored path="ConcurrentLinkedLists.iws" />
@@ -29,11 +36,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ListRunner.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BasicLinkedList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/multicore/BasicLinkedList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicThread.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/multicore/BasicThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="55" column="60" selection-start-line="55" selection-start-column="60" selection-end-line="55" selection-end-column="60" />
+              <folding>
+                <element signature="e#144#145#0" expanded="true" />
+                <element signature="e#163#164#0" expanded="true" />
+                <element signature="e#299#300#0" expanded="true" />
+                <element signature="e#321#322#0" expanded="true" />
+                <element signature="e#354#355#0" expanded="true" />
+                <element signature="e#378#379#0" expanded="true" />
+                <element signature="e#410#411#0" expanded="true" />
+                <element signature="e#434#435#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListRunner.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/multicore/ListRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="675">
+              <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -41,11 +77,50 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CoarseGrainList.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/multicore/Utils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-47">
+              <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#739#740#0" expanded="true" />
+                <element signature="e#781#782#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoarseGrainList.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/multicore/CoarseGrainList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+              <folding>
+                <element signature="e#99#100#0" expanded="true" />
+                <element signature="e#116#117#0" expanded="true" />
+                <element signature="e#162#163#0" expanded="true" />
+                <element signature="e#188#189#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FineGrainList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/multicore/FineGrainList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LockFreeList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/multicore/LockFreeList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -54,28 +129,21 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/multicore/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/multicore/Utils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="214" column="48" selection-start-line="214" selection-start-column="48" selection-end-line="214" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3741#3742#0" expanded="true" />
-                <element signature="e#3772#3773#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -93,19 +161,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/multicore/FineGrainList.java" />
-        <option value="$PROJECT_DIR$/src/com/multicore/BasicLinkedList.java" />
         <option value="$PROJECT_DIR$/src/com/multicore/Node.java" />
-        <option value="$PROJECT_DIR$/src/com/multicore/LockFreeList.java" />
-        <option value="$PROJECT_DIR$/src/com/multicore/TestTestAndSet.java" />
-        <option value="$PROJECT_DIR$/src/com/multicore/RunParameters.java" />
         <option value="$PROJECT_DIR$/src/com/multicore/Runner.java" />
-        <option value="$PROJECT_DIR$/src/com/multicore/BasicThread.java" />
-        <option value="$PROJECT_DIR$/src/com/multicore/CoarseGrainList.java" />
-        <option value="$PROJECT_DIR$/src/com/multicore/Lock.java" />
         <option value="$PROJECT_DIR$/src/com/multicore/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/multicore/Range.java" />
+        <option value="$PROJECT_DIR$/src/com/multicore/BasicLinkedList.java" />
+        <option value="$PROJECT_DIR$/src/com/multicore/RunParameters.java" />
         <option value="$PROJECT_DIR$/src/com/multicore/Utils.java" />
+        <option value="$PROJECT_DIR$/src/com/multicore/LockFreeList.java" />
+        <option value="$PROJECT_DIR$/src/com/multicore/FineGrainList.java" />
+        <option value="$PROJECT_DIR$/src/com/multicore/Lock.java" />
+        <option value="$PROJECT_DIR$/src/com/multicore/CoarseGrainList.java" />
+        <option value="$PROJECT_DIR$/src/com/multicore/TestTestAndSet.java" />
         <option value="$PROJECT_DIR$/src/com/multicore/ListRunner.java" />
+        <option value="$PROJECT_DIR$/src/com/multicore/BasicThread.java" />
       </list>
     </option>
   </component>
@@ -164,7 +233,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.1983471" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="SearchEverywhereHistoryKey" value="U&#9;FILE&#9;file:///media/ram/Masters-Drive/Masters/School/Fall 2016/MCP/Assignments/2/concurrentlinkedlists/src/com/multicore/Utils.java&#10;Ut&#9;FILE&#9;file:///media/ram/Masters-Drive/Masters/School/Fall 2016/MCP/Assignments/2/concurrentlinkedlists/src/com/multicore/Utils.java&#10;main&#9;FILE&#9;file:///media/ram/Masters-Drive/Masters/School/Fall 2016/MCP/Assignments/2/concurrentlinkedlists/src/com/multicore/Main.java" />
+    <property name="SearchEverywhereHistoryKey" value="ock&#9;FILE&#9;file:///media/ram/Masters-Drive/Masters/School/Fall 2016/MCP/Assignments/2/concurrentlinkedlists/src/com/multicore/Lock.java&#10;tes&#9;FILE&#9;file:///media/ram/Masters-Drive/Masters/School/Fall 2016/MCP/Assignments/2/concurrentlinkedlists/src/com/multicore/TestTestAndSet.java&#10;Lo&#9;FILE&#9;file:///media/ram/Masters-Drive/Masters/School/Fall 2016/MCP/Assignments/2/concurrentlinkedlists/src/com/multicore/LockFreeList.java&#10;Fine&#9;FILE&#9;file:///media/ram/Masters-Drive/Masters/School/Fall 2016/MCP/Assignments/2/concurrentlinkedlists/src/com/multicore/FineGrainList.java&#10;main&#9;FILE&#9;file:///media/ram/Masters-Drive/Masters/School/Fall 2016/MCP/Assignments/2/concurrentlinkedlists/src/com/multicore/Main.java&#10;Lis&#9;FILE&#9;file:///media/ram/Masters-Drive/Masters/School/Fall 2016/MCP/Assignments/2/concurrentlinkedlists/src/com/multicore/ListRunner.java&#10;Gra&#9;FILE&#9;file:///media/ram/Masters-Drive/Masters/School/Fall 2016/MCP/Assignments/2/concurrentlinkedlists/src/com/multicore/CoarseGrainList.java&#10;Uti&#9;FILE&#9;file:///media/ram/Masters-Drive/Masters/School/Fall 2016/MCP/Assignments/2/concurrentlinkedlists/src/com/multicore/Utils.java&#10;util&#9;FILE&#9;file:///media/ram/Masters-Drive/Masters/School/Fall 2016/MCP/Assignments/2/concurrentlinkedlists/src/com/multicore/Utils.java&#10;lock&#9;FILE&#9;file:///media/ram/Masters-Drive/Masters/School/Fall 2016/MCP/Assignments/2/concurrentlinkedlists/src/com/multicore/LockFreeList.java&#10;b&#9;FILE&#9;file:///media/ram/Masters-Drive/Masters/School/Fall 2016/MCP/Assignments/2/concurrentlinkedlists/src/com/multicore/BasicThread.java&#10;Node&#9;FILE&#9;file:///media/ram/Masters-Drive/Masters/School/Fall 2016/MCP/Assignments/2/concurrentlinkedlists/src/com/multicore/Node.java&#10;Bas&#9;FILE&#9;file:///media/ram/Masters-Drive/Masters/School/Fall 2016/MCP/Assignments/2/concurrentlinkedlists/src/com/multicore/BasicLinkedList.java&#10;U&#9;FILE&#9;file:///media/ram/Masters-Drive/Masters/School/Fall 2016/MCP/Assignments/2/concurrentlinkedlists/src/com/multicore/Utils.java&#10;Ut&#9;FILE&#9;file:///media/ram/Masters-Drive/Masters/School/Fall 2016/MCP/Assignments/2/concurrentlinkedlists/src/com/multicore/Utils.java" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="82" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="97" />
@@ -524,12 +593,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-          <folding>
-            <element signature="e#664#665#0" expanded="true" />
-            <element signature="e#692#693#0" expanded="true" />
-            <element signature="e#724#725#0" expanded="true" />
-            <element signature="e#754#755#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -555,7 +619,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#99#100#0" expanded="true" />
+            <element signature="e#116#117#0" expanded="true" />
+            <element signature="e#162#163#0" expanded="true" />
+            <element signature="e#188#189#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -611,12 +680,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#664#665#0" expanded="true" />
-            <element signature="e#692#693#0" expanded="true" />
-            <element signature="e#724#725#0" expanded="true" />
-            <element signature="e#754#755#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -642,7 +706,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#99#100#0" expanded="true" />
+            <element signature="e#116#117#0" expanded="true" />
+            <element signature="e#162#163#0" expanded="true" />
+            <element signature="e#188#189#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -721,115 +790,126 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/multicore/Range.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/multicore/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/multicore/FineGrainList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/multicore/BasicLinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/multicore/LockFreeList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/multicore/Lock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/multicore/RunParameters.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-          <folding>
-            <element signature="e#198#199#0" expanded="true" />
-            <element signature="e#226#227#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/multicore/TestTestAndSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-          <folding>
-            <element signature="e#191#192#0" expanded="true" />
-            <element signature="e#236#237#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/multicore/BasicThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-          <folding>
-            <element signature="e#664#665#0" expanded="true" />
-            <element signature="e#692#693#0" expanded="true" />
-            <element signature="e#724#725#0" expanded="true" />
-            <element signature="e#754#755#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/multicore/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+        <state relative-caret-position="60">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/multicore/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="214" column="48" selection-start-line="214" selection-start-column="48" selection-end-line="214" selection-end-column="48" />
+        <state relative-caret-position="-47">
+          <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3741#3742#0" expanded="true" />
-            <element signature="e#3772#3773#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
+            <element signature="e#781#782#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/multicore/CoarseGrainList.java">
+    <entry file="file://$PROJECT_DIR$/src/com/multicore/LockFreeList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="45">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/multicore/FineGrainList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/multicore/Lock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/multicore/TestTestAndSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/multicore/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/multicore/ListRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="675">
+          <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/multicore/BasicThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="55" column="60" selection-start-line="55" selection-start-column="60" selection-end-line="55" selection-end-column="60" />
+          <folding>
+            <element signature="e#144#145#0" expanded="true" />
+            <element signature="e#163#164#0" expanded="true" />
+            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#321#322#0" expanded="true" />
+            <element signature="e#354#355#0" expanded="true" />
+            <element signature="e#378#379#0" expanded="true" />
+            <element signature="e#410#411#0" expanded="true" />
+            <element signature="e#434#435#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/multicore/BasicLinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/multicore/CoarseGrainList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding>
+            <element signature="e#99#100#0" expanded="true" />
+            <element signature="e#116#117#0" expanded="true" />
+            <element signature="e#162#163#0" expanded="true" />
+            <element signature="e#188#189#0" expanded="true" />
           </folding>
         </state>
       </provider>
