@@ -1,13 +1,11 @@
 package com.multicore;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
+import java.util.*;
 import java.util.logging.FileHandler;
 import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
@@ -15,9 +13,46 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 public final class Utils {
-  public static boolean debugFlag = true;
-  private static Logger logger;
-  private static HashMap<Integer, ArrayList<Float>> statsMap;
+
+    private static final int SEARCH = 0;
+    private static final int INSERT = 1;
+    private static final int DELETE = 2;
+    private static final String INSERT_STRING = "insert";
+    private static final String SEARCH_STRING = "search";
+    private static final String DELETE_STRING = "delete";
+    private static List<int[]> taskList = new ArrayList<>();
+
+    static int getTaskID(String task) {
+        if( task.equals(INSERT_STRING) ) {
+            return INSERT;
+        }
+        else if( task.equals(DELETE_STRING) ) {
+            return DELETE;
+        }
+        else if( task.equals(SEARCH_STRING) ) {
+            return SEARCH;
+        }
+        return -1;
+    }
+
+    static String getTaskName(int taskId) {
+
+        if( taskId == INSERT ) {
+            return INSERT_STRING;
+        }
+        else if( taskId == DELETE ) {
+            return DELETE_STRING;
+        }
+        else if( taskId == SEARCH ) {
+            return SEARCH_STRING;
+        }
+
+        return "";
+    }
+
+    public static boolean debugFlag = true;
+    private static Logger logger;
+    private static HashMap<Integer, ArrayList<Float>> statsMap;
 
   public Utils() {
     statsMap = new HashMap<>();
@@ -102,4 +137,94 @@ public final class Utils {
 
   public static void printStatistics() {
   }
+
+    public static List<int[]> getTaskList() {
+        return taskList;
+    }
+
+  public static void loadTasks() throws IOException{
+
+      BufferedReader reader;
+
+      try {
+          reader=new BufferedReader(new FileReader("tasks.txt"));
+          String line=reader.readLine();
+          while( line != null ) {
+              String[] operationInput = line.split("\\s");
+
+              if( getTaskID( operationInput[0]) == -1 ) {
+                  System.out.println("INFO: Illegal Operation:"+line);
+                  System.exit(2);
+              }
+
+              int[] task = new int[2];
+              task[0] = getTaskID(operationInput[0]);
+              task[1] = Integer.parseInt(operationInput[1]);
+              taskList.add(task);
+
+              line=reader.readLine();
+          }
+
+      }
+      catch( IOException e ) {
+          e.printStackTrace();
+      }
+  }
+
+    public static void printTasks() {
+
+        for( int[] task : getTaskList() ) {
+            System.out.println(task[0]+" "+task[1]);
+        }
+    }
+
+    public static List<Range> scheduleTasks(int numberOfThreads) {
+
+        List<Range> scheduledTasksList = new ArrayList<>();
+        int numberOfTasks = getTaskList().size();
+
+        if( numberOfThreads > numberOfTasks ) {
+
+            for( int i=0; i<numberOfThreads; i++ ) {
+                if( i >= numberOfTasks ) {
+                    scheduledTasksList.add(null);
+                }
+                else {
+                    scheduledTasksList.add(new Range(i, i));
+                }
+            }
+        }
+        else {
+            int tasksPerThread = (numberOfTasks%numberOfThreads != 0)? (numberOfTasks/numberOfThreads)+1: numberOfTasks/numberOfThreads;
+            System.out.println(tasksPerThread);
+            int startPos = 0, endPos=tasksPerThread-1;
+
+            for( int i=0; i<numberOfThreads; i++ ) {
+
+                if( endPos >= numberOfTasks ) {
+                    endPos = numberOfTasks-1;
+                }
+
+                if( startPos <= endPos ) {
+                    scheduledTasksList.add(new Range(startPos, endPos));
+                }
+                else {
+                    scheduledTasksList.add(null);
+                }
+                startPos = endPos + 1;
+                endPos = endPos + tasksPerThread;
+            }
+        }
+        return scheduledTasksList;
+    }
+}
+
+class Range {
+    int x;
+    int y;
+
+    Range(int i, int j) {
+        x=i;
+        y=j;
+    }
 }

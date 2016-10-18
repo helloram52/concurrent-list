@@ -1,14 +1,14 @@
-[2016-10-16 15:59:13.046] INFO : Number of available CPU cores #4
-[2016-10-16 15:59:13.201] INFO : Run  #1:
-[2016-10-16 15:59:13.204] INFO : Number of Processors: 1
-[2016-10-16 15:59:13.217] INFO : Coarse Grain List:
-[2016-10-16 15:59:13.441] INFO : 		Execution Time: 0.194 seconds.
-[2016-10-16 15:59:13.443] INFO : Number of Processors: 2
-[2016-10-16 15:59:13.445] INFO : Coarse Grain List:
-[2016-10-16 15:59:13.880] INFO : 		Execution Time: 0.427 seconds.
-[2016-10-16 15:59:13.882] INFO : Number of Processors: 3
-[2016-10-16 15:59:13.886] INFO : Coarse Grain List:
-[2016-10-16 15:59:15.028] INFO : 		Execution Time: 1.138 seconds.
-[2016-10-16 15:59:15.029] INFO : Number of Processors: 4
-[2016-10-16 15:59:15.032] INFO : Coarse Grain List:
-[2016-10-16 15:59:16.285] INFO : 		Execution Time: 1.248 seconds.
+[2016-10-17 21:09:48.433] INFO : Number of available CPU cores #4
+[2016-10-17 21:09:48.491] INFO : Run  #1:
+[2016-10-17 21:09:48.493] INFO : Number of Processors: 1
+[2016-10-17 21:09:48.499] INFO : Coarse Grain List:
+[2016-10-17 21:09:48.668] INFO : 		Execution Time: 0.158 seconds.
+[2016-10-17 21:09:48.670] INFO : Number of Processors: 2
+[2016-10-17 21:09:48.673] INFO : Coarse Grain List:
+[2016-10-17 21:09:49.083] INFO : 		Execution Time: 0.405 seconds.
+[2016-10-17 21:09:49.085] INFO : Number of Processors: 3
+[2016-10-17 21:09:49.087] INFO : Coarse Grain List:
+[2016-10-17 21:09:49.785] INFO : 		Execution Time: 0.694 seconds.
+[2016-10-17 21:09:49.786] INFO : Number of Processors: 4
+[2016-10-17 21:09:49.790] INFO : Coarse Grain List:
+[2016-10-17 21:09:51.075] INFO : 		Execution Time: 1.284 seconds.
