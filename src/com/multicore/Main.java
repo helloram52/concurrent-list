@@ -1,9 +1,12 @@
 package com.multicore;
 
+import java.io.IOException;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         Utils.setLogger();
+        Utils.loadTasks();
 
         int processors = Runtime.getRuntime().availableProcessors();
         Utils.log("Number of available CPU cores #" + processors);
