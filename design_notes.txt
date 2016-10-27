@@ -13,3 +13,6 @@
 - enum config
     - percentage of inserts, deletes, searches that should happen across n threads
 
+- For testing strategy, refer the below links
+    http://christtz.github.io/parallelfinal/writeup.pdf
+    http://abutko.github.io/418project/

@@ -6,17 +6,17 @@ public class LockFreeList extends BasicLinkedList {
   }
 
   @Override
-  public void insert(int key) {
-
+  public boolean insert(int key) {
+    return true;
   }
 
   @Override
-  public void delete(int key) {
-
+  public boolean delete(int key) {
+    return true;
   }
 
   @Override
-  public void search(int key) {
-
+  public boolean search(int key) {
+    return true;
   }
 }
