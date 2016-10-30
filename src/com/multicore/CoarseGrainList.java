@@ -1,15 +1,11 @@
 package com.multicore;
 
 public class CoarseGrainList extends BasicLinkedList {
+  private Lock lock;
+
   CoarseGrainList() {
     super();
-  }
-
-  Lock lock;
-
-  CoarseGrainList(Lock lock) {
-    super();
-    this.lock = lock;
+    this.lock = new TestTestAndSet();;
   }
 
   @Override

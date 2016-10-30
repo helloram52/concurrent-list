@@ -4,71 +4,45 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class BasicThread implements Runnable {
 
-  public int getID() {
-    return ID;
-  }
-
-  private int ID;
-  private AtomicInteger counter;
-  private Range range;
+  private int operationID;
+  private String operationName;
+  private int key;
   private BasicLinkedList list;
 
-  public Range getRange() {
-    return range;
+  public int getOperationID() {
+    return operationID;
   }
 
-  public int getStartTaskPos(){
-    return range.x;
-  }
-
-  public int getEndTaskPos() {
-    return range.y;
-  }
-
-  public BasicThread(int ID, BasicLinkedList list, AtomicInteger counter, Range range) {
-    this.ID = ID;
-    this.counter = counter;
-    this.range=range;
+  public BasicThread(int operationID, BasicLinkedList list, String operationName, int key) {
+    this.operationID = operationID;
     this.list = list;
+    this.operationName = operationName;
+    this.key = key;
   }
-
-  private void enterCriticalSection() {
-    long i = 0;
-    while (i++ < RunParameters.NUMBER_TO_COUNT_IN_CS.value) {
-      this.counter.incrementAndGet();
-    }
-
-//    Utils.log("Thread '" + this.ID + "', counter value: '"+ this.counter.get() + "'");
-  }
-
 
   public void run() {
-    for (int i = 0; i < RunParameters.NUMBER_OF_CS_RUNS_PER_THREAD.value; i++) {
 
-      if( getRange() != null ) {
-        //System.out.println("Thread id="+getID()+" startTaskPos="+startTaskPos+" endTaskPos="+endTaskPos);
-        for( int taskPos=getStartTaskPos(); taskPos<=getEndTaskPos();taskPos++ ) {
+    boolean result;
+    switch (operationName) {
+      case "insert":
+        result = list.insert(key);
+        Utils.log("Insert(" + key + ") : " + result);
+        break;
 
-          int[] task= Utils.getTask(taskPos);
+      case "delete":
+        result = list.delete(key);
+        Utils.log("Delete(" + key + ") : " + result);
+        break;
 
-          if( task[0] == Utils.INSERT ) {
-            list.insert(task[1]);
-            System.out.println(getID()+" insert ="+task[1]);
-          }
-          else if( task[0] == Utils.DELETE ){
-            list.delete(task[1]);
-            System.out.println(getID()+" delete ="+task[1]);
-          }
-          else if ( task[0] == Utils.SEARCH ) {
-            list.search(task[1]);
-            System.out.println(getID()+" search ="+task[1]);
-          }
-          else {
-            Utils.log("Thread id="+getID()+" Illegal operation:"+ task[0]);
-          }
-        }
-      }
+      case "search":
+        result = list.search(key);
+        Utils.log("Search(" + key + ") : " + result);
+        break;
+
+      default:
+        Utils.log("Invalid operation: " + operationName);
     }
+
   }
 
 }
