@@ -1,22 +1,25 @@
 package com.multicore;
 
-public class FineGrainList extends BasicLinkedList {
+public class FineGrainList {
+  FineGrainNode head;
+  FineGrainNode tail;
 
   FineGrainList() {
-    super();
+    head = new FineGrainNode(Integer.MIN_VALUE, null);
+    tail = new FineGrainNode(Integer.MAX_VALUE, null);
+
+    head.next = tail;
+    tail.next = null;
   }
 
-  @Override
   public boolean insert(int key) {
     return true;
   }
 
-  @Override
   public boolean delete(int key) {
     return true;
   }
 
-  @Override
   public boolean search(int key) {
     return true;
   }

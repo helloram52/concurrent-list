@@ -63,16 +63,17 @@ public class Runner {
   }
 
   private Callable<Void> asMonitoredCallable(Runnable task) {
+    final Runnable runnableTask = task;
     return new Callable<Void>() {
       @Override
       public Void call() throws Exception {
         try {
-          task.run();
+          runnableTask.run();
           taskFinished();
 
           return null;
         } catch (Exception e) {
-          BasicThread basicThread = (BasicThread) task.getClass().newInstance();
+          BasicThread basicThread = (BasicThread) runnableTask.getClass().newInstance();
           Utils.log("[Runner] Exception occurred: " + e + " class name: " +  basicThread.getID() + "stackTrace: " + e.getStackTrace());
           taskFailed();
           throw e;

@@ -146,12 +146,12 @@ public final class Utils {
         return taskList;
     }
 
-  public static void loadTasks() throws IOException{
+  public static void loadTasks(String filename) throws IOException{
 
       BufferedReader reader;
 
       try {
-          reader=new BufferedReader(new FileReader("tasks.txt"));
+          reader=new BufferedReader(new FileReader(filename));
           String line=reader.readLine();
           while( line != null ) {
               String[] operationInput = line.split("\\s");
