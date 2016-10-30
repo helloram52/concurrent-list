@@ -1,5 +1,7 @@
 package com.multicore;
 
+import java.util.concurrent.atomic.AtomicMarkableReference;
+
 public class Node {
   public int key;
   public Node next;
@@ -29,17 +31,28 @@ public class Node {
 class FineGrainNode extends Node {
   boolean marked;
   Lock lock;
+  FineGrainNode next;
 
-  FineGrainNode(int key, Lock lock) {
+  FineGrainNode(int key) {
     super(key);
-    this.setKey(key);
+    this.setLock();
     this.setNext(null);
-    this.setLock(lock);
     this.setMarked(false);
   }
 
   public boolean isMarked() {
     return marked;
+  }
+
+  public void setNext(FineGrainNode node ) {
+    this.next = node;
+  }
+
+  public FineGrainNode getNext() {
+    return this.next;
+  }
+  public boolean getMarked() {
+    return this.marked;
   }
 
   public void setMarked(boolean marked) {
@@ -50,8 +63,37 @@ class FineGrainNode extends Node {
     return lock;
   }
 
-  public void setLock(Lock lock) {
-    this.lock = lock;
+  public void setLock() {
+    this.lock = new TestTestAndSet();
+  }
+
+}
+
+class LockFreeNode extends Node {
+  public int key;
+  AtomicMarkableReference<LockFreeNode> next;
+
+  LockFreeNode(int key) {
+    super(key);
+    this.setNext(new AtomicMarkableReference<LockFreeNode>(null, false));
+  }
+
+  public int getKey() {
+    return key;
+  }
+
+  public void setKey(int key) {
+    this.key = key;
+  }
+  public LockFreeNode getNext() {
+    return next.getReference();
+  }
+  public AtomicMarkableReference<LockFreeNode> getNextAtomicReference() {
+    return next;
+  }
+
+  public void setNext(AtomicMarkableReference<LockFreeNode> next) {
+    this.next = next;
   }
 
 }

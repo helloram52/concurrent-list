@@ -41,8 +41,8 @@ public class BasicThread implements Runnable {
 
       default:
         Utils.log("Invalid operation: " + operationName);
-    }
 
+    }
   }
 
 }
