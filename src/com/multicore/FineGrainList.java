@@ -1,6 +1,6 @@
 package com.multicore;
 
-public class FineGrainList {
+public class FineGrainList implements BasicLinkedList {
   FineGrainNode head;
   FineGrainNode tail;
 

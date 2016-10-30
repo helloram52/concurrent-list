@@ -14,13 +14,13 @@ public class Main {
 
         int processors = Runtime.getRuntime().availableProcessors();
         int numberOfThreads = processors * 2;
-        Utils.log("Number of available CPU cores #" + processors);
+        Utils.logInfo("Number of available CPU cores #" + processors);
 
         for(int i = 1;i <= RunParameters.NUMBER_OF_RUNS.value;i++) {
-            Utils.log("Run  #" + i + ":");
+            Utils.logInfo("Run  #" + i + ":");
 
             for (int j = 1;j <= numberOfThreads;j++) {
-                Utils.log("Number of threads: " + j);
+                Utils.logInfo("Number of threads: " + j);
                 new ListRunner().run(j, totalOperationsToPerform);
             }
         }

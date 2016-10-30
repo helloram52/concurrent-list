@@ -40,7 +40,8 @@ public final class Utils {
           cal.setTimeInMillis(record.getMillis());
 
           return "[" + logTime.format(cal.getTime())
-            + "] " + record.getLevel()
+            + "] Nanotime: " + System.nanoTime()
+            + " " + record.getLevel()
             + " : "
             + record.getMessage() + "\n";
         }
@@ -60,8 +61,12 @@ public final class Utils {
       System.out.println("[" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSS").format(new Date()) + "] " + msg);
   }
 
-  public static void log(String message) {
-    logger.info(message);
+  public static void logInfo(String message) {
+      logger.info(message);
+  }
+
+  public static void logWarning(String message) {
+    logger.warning(message);
   }
 
   public static void gatherStatistics(int algorithmIndex, float executionTime) {

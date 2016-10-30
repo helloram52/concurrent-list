@@ -2,11 +2,10 @@ package com.multicore;
 
 import java.util.concurrent.atomic.AtomicMarkableReference;
 
-public class LockFreeList extends BasicLinkedList {
+public class LockFreeList implements BasicLinkedList {
   LockFreeNode head, tail;
 
   LockFreeList() {
-    super();
     head = new LockFreeNode(Integer.MIN_VALUE);
     tail = new LockFreeNode(Integer.MAX_VALUE);
 
@@ -43,7 +42,6 @@ public class LockFreeList extends BasicLinkedList {
     }
   }
 
-  @Override
   public boolean insert(int key) {
 
     while(true) {
@@ -62,7 +60,7 @@ public class LockFreeList extends BasicLinkedList {
     }
   }
 
-  @Override
+
   public boolean delete(int key) {
 
     boolean result = true;
@@ -84,7 +82,7 @@ public class LockFreeList extends BasicLinkedList {
     }
   }
 
-  @Override
+
   public boolean search(int key) {
 
     boolean[] marked = {false};

@@ -1,10 +1,21 @@
 package com.multicore;
 
-public class CoarseGrainList extends BasicLinkedList {
+public class CoarseGrainList implements BasicLinkedList {
   private Lock lock;
+  private Node head;
+  private Node tail;
 
   CoarseGrainList() {
-    super();
+
+    // Set the sentinels to integer min/max values
+    // so that traversal is easy during insert &
+    // other operations.
+    head = new Node(Integer.MIN_VALUE);
+    tail = new Node(Integer.MAX_VALUE);
+
+    head.next = tail;
+    tail.next = null;
+
     this.lock = new TestTestAndSet();;
   }
 

@@ -9,14 +9,16 @@ package com.multicore;
  * the experiment.
  */
 public enum RunMode {
-  READ_DOMINATED(9, 1, 90),
-  MIXED(20, 10, 70),
-  WRITE_DOMINATED(50, 50, 0);
+  READ_DOMINATED(9, 1, 90, "Read Dominated"),
+  MIXED(20, 10, 70, "Mixed"),
+  WRITE_DOMINATED(50, 50, 0, "Write Dominated");
 
   int percentageOfInserts, percentageOfDeletes, percentageOfSearches;
-  RunMode(int percentageOfInserts, int percentageOfDeletes, int percentageOfSearches) {
+  String modeName;
+  RunMode(int percentageOfInserts, int percentageOfDeletes, int percentageOfSearches, String modeName) {
     this.percentageOfInserts = percentageOfInserts;
     this.percentageOfDeletes = percentageOfDeletes;
     this.percentageOfSearches = percentageOfSearches;
+    this.modeName = modeName;
   }
 }

@@ -26,21 +26,21 @@ public class BasicThread implements Runnable {
     switch (operationName) {
       case "insert":
         result = list.insert(key);
-        Utils.log("OperationID: " + operationID +  " Insert(" + key + ") : " + result);
+        Utils.logInfo("OperationID: " + operationID +  " Insert(" + key + ") : " + result);
         break;
 
       case "delete":
         result = list.delete(key);
-        Utils.log("OperationID: " + operationID +  " Delete(" + key + ") : " + result);
+        Utils.logInfo("OperationID: " + operationID +  " Delete(" + key + ") : " + result);
         break;
 
       case "search":
         result = list.search(key);
-        Utils.log("OperationID: " + operationID +  " Search(" + key + ") : " + result);
+        Utils.logInfo("OperationID: " + operationID +  " Search(" + key + ") : " + result);
         break;
 
       default:
-        Utils.log("Invalid operation: " + operationName);
+        Utils.logInfo("Invalid operation: " + operationName);
 
     }
   }

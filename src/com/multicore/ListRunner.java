@@ -19,7 +19,7 @@ public class ListRunner {
 
       while (i++ < totalOperationsCount) {
         int randomInt = random.nextInt(100) + 1;
-        int key = random.nextInt(1000) + 1;
+        int key = random.nextInt(RunParameters.MAX_KEY_SIZE.value) + 1;
 
         if (randomInt >= 1 && randomInt <= insertEnd) {
           runner.run( new BasicThread(i, list, "insert", key) );
@@ -41,13 +41,13 @@ public class ListRunner {
         * RunParameters.NUMBER_TO_COUNT_IN_CS.value;
       long actualCounterValue = counter.get();
       if (expectedCounterValue != actualCounterValue) {
-        Utils.log("\t\tCounter doesn't look good. Expected: " + expectedCounterValue + " Actual: " + actualCounterValue);
+        Utils.logInfo("\t\tCounter doesn't look good. Expected: " + expectedCounterValue + " Actual: " + actualCounterValue);
       }
 
       long endTime = System.currentTimeMillis();
       float totalTime = (float) (endTime - startTime) / 1000;
 
-      Utils.log("\t\tExecution Time: " + totalTime + " seconds.");
+      Utils.logInfo("\t\tExecution Time: " + totalTime + " seconds.");
       return totalTime;
       */
         return 0;
@@ -58,10 +58,17 @@ public class ListRunner {
       // For each run, execute it for all the different modes.
       for (RunMode mode : RunMode.values()) {
 
-        Utils.log("Coarse Grain List:");
-        BasicLinkedList list = new CoarseGrainList();
-        startThreads(numberOfThreads, list, mode, totalOperationsCount);
+        Utils.logWarning("Testing Coarse Grain List in  '" + mode.modeName + "' mode.");
+        BasicLinkedList coarseGrainList = new CoarseGrainList();
+        startThreads(numberOfThreads, coarseGrainList, mode, totalOperationsCount);
 
+        Utils.logWarning("Testing Fine Grain List in  '" + mode.modeName + "' mode.");
+        BasicLinkedList fineGrainList = new FineGrainList();
+        startThreads(numberOfThreads, fineGrainList, mode, totalOperationsCount);
+
+        Utils.logWarning("Testing Lock free List in  '" + mode.modeName + "' mode.");
+        BasicLinkedList lockFreeList = new LockFreeList();
+        startThreads(numberOfThreads, lockFreeList, mode, totalOperationsCount);
       }
   }
 }

@@ -73,7 +73,7 @@ public class Runner {
           return null;
         } catch (Exception e) {
           BasicThread basicThread = (BasicThread) task.getClass().newInstance();
-          Utils.log("[Runner] Exception occurred: " + e + " class name: " +  basicThread.getOperationID() + "stackTrace: " + e.getStackTrace());
+          Utils.logInfo("[Runner] Exception occurred: " + e + " class name: " +  basicThread.getOperationID() + "stackTrace: " + e.getStackTrace());
           taskFailed();
           throw e;
         } catch (Throwable t) {
