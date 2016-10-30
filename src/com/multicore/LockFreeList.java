@@ -60,7 +60,6 @@ public class LockFreeList extends BasicLinkedList {
         }
       }
     }
-
   }
 
   @Override

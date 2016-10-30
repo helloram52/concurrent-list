@@ -24,6 +24,8 @@ public final class Utils {
 
   public static void setLogger() {
     logger = Logger.getLogger("CustomLog");
+    logger.setUseParentHandlers(false);
+
     FileHandler fh;
 
     try {
