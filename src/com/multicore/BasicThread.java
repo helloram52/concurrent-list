@@ -25,16 +25,22 @@ public class BasicThread implements Runnable {
     boolean result;
     switch (operationName) {
       case "insert":
+
+        Utils.logInfo("Invoking OperationID: " + operationID );
         result = list.insert(key);
         Utils.logInfo("OperationID: " + operationID +  " Insert(" + key + ") : " + result);
         break;
 
       case "delete":
+
+        Utils.logInfo("Invoking OperationID: " + operationID );
         result = list.delete(key);
         Utils.logInfo("OperationID: " + operationID +  " Delete(" + key + ") : " + result);
         break;
 
       case "search":
+
+        Utils.logInfo("Invoking OperationID: " + operationID );
         result = list.search(key);
         Utils.logInfo("OperationID: " + operationID +  " Search(" + key + ") : " + result);
         break;

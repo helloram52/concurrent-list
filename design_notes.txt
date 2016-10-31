@@ -16,3 +16,4 @@
 - For testing strategy, refer the below links
     http://christtz.github.io/parallelfinal/writeup.pdf
     http://abutko.github.io/418project/
+    http://www.cs.cmu.edu/~wing/publications/WingGong93.pdf
