@@ -1,8 +1,8 @@
 package com.multicore;
 
 public class FineGrainList implements BasicLinkedList {
-  FineGrainNode head;
-  FineGrainNode tail;
+  private FineGrainNode head;
+  private FineGrainNode tail;
 
   FineGrainList() {
     head = new FineGrainNode(Integer.MIN_VALUE);
@@ -12,7 +12,11 @@ public class FineGrainList implements BasicLinkedList {
     tail.next = null;
   }
 
-  public boolean validate( FineGrainNode pred, FineGrainNode curr ) {
+  public FineGrainNode getHead() {
+    return head;
+  }
+
+  public boolean validate(FineGrainNode pred, FineGrainNode curr ) {
     return !pred.getMarked() && !curr.getMarked() && pred.getNext() == curr;
   }
 

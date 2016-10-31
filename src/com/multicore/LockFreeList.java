@@ -13,6 +13,10 @@ public class LockFreeList implements BasicLinkedList {
     tail.next = new AtomicMarkableReference<>(null, false);
   }
 
+  public LockFreeNode getHead() {
+    return head;
+  }
+
   public Window find(LockFreeNode head, int key) {
     LockFreeNode pred = null, curr = null, succ = null;
     boolean marked[] = {false};

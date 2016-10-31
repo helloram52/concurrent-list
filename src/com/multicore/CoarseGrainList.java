@@ -10,6 +10,10 @@ public class CoarseGrainList extends SequentialLinkedList {
     this.lock = new TestTestAndSet();
   }
 
+  public Node getHead() {
+    return this.head;
+  }
+
   @Override
   public boolean insert(int insertKey) {
     lock.lock();
