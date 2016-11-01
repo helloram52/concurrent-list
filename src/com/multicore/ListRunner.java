@@ -26,21 +26,22 @@ public class ListRunner {
 
       return ( tasks % threads == 0 )? tasks/threads:(tasks/threads) + 1;
   }
-  public float startThreads(int n, BasicLinkedList list, RunMode runMode, int totalOperationsCount, SequentialLinkedList sequentialLinkedList) {
+  public float startThreads(int n, BasicLinkedList list, RunMode runMode, int totalOperationsCount, SequentialLinkedList sequentialList) {
 
       long startTime = System.currentTimeMillis();
 
       // Pre-populate the given list so that read-dominated mode has something to
       // test.
-      prePopulateList(list, sequentialLinkedList);
+      //prePopulateList(list, sequentialList);
 
       int numberOfBatches = getNumberOfBatches(totalOperationsCount, n);
       int count=0;
+      int[] threadID = {0};
 
       while( count++ < numberOfBatches ) {
 
           Runner runner = new Runner(n);
-          runThreads(runner, runMode, n, list, sequentialLinkedList);
+          runThreads(threadID, runner, runMode, n, list, sequentialList);
           runner.waitTillDone();
           runner.shutDown();
 
@@ -52,10 +53,10 @@ public class ListRunner {
       return totalTime;
   }
 
-    public void runThreads( Runner runner, RunMode runMode, int noOfThreads, BasicLinkedList list, BasicLinkedList SequentialList ){
+    public void runThreads( int[] threadId, Runner runner, RunMode runMode, int noOfThreads, BasicLinkedList list, BasicLinkedList SequentialList ){
+
       int i = 0;
       Random random = new Random();
-
       int insertEnd = runMode.percentageOfInserts;
       int deleteStart = insertEnd + 1;
       int deleteEnd = deleteStart + runMode.percentageOfDeletes;
@@ -63,18 +64,18 @@ public class ListRunner {
       while (i++ < noOfThreads) {
         int randomInt = random.nextInt(100) + 1;
         int key = random.nextInt(RunParameters.MAX_KEY_SIZE.value) + 1;
-
         if (randomInt >= 1 && randomInt <= insertEnd) {
-            runner.run( new BasicThread(i, list, "insert", key) );
+            runner.run( new BasicThread(threadId[0], list, "insert", key) );
             SequentialList.insert(key);
         }
         else if (randomInt >= deleteStart && randomInt < deleteEnd) {
-            runner.run( new BasicThread(i, list, "delete", key) );
+            runner.run( new BasicThread(threadId[0], list, "delete", key) );
             SequentialList.delete(key);
         }
         else {
-          runner.run( new BasicThread(i, list, "search", key) );
+          runner.run( new BasicThread(threadId[0], list, "search", key) );
         }
+        threadId[0] += i;
       }
     }
 
