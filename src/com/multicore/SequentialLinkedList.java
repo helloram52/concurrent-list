@@ -16,11 +16,15 @@ public class SequentialLinkedList implements BasicLinkedList {
 
     head.next = tail;
     tail.next = null;
-    }
+  }
 
-    @Override
-    public boolean insert(int insertKey) {
-      Node pred, curr;
+  public Node getHead() {
+    return head;
+  }
+
+  @Override
+  public boolean insert(int insertKey) {
+    Node pred, curr;
 
       pred = head;
       curr = head.next;
