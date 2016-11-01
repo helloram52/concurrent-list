@@ -62,7 +62,7 @@ public class Runner {
     return this;
   }
 
-  private Callable<Void> asMonitoredCallable(final Runnable task) {
+  private Callable<Void> asMonitoredCallable(Runnable task) {
     return new Callable<Void>() {
       @Override
       public Void call() throws Exception {

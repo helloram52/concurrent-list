@@ -18,6 +18,10 @@ public class SequentialLinkedList implements BasicLinkedList {
     tail.next = null;
   }
 
+  public Node getHead() {
+    return head;
+  }
+
   @Override
   public boolean insert(int insertKey) {
     Node pred, curr;
