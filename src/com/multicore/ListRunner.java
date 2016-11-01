@@ -18,14 +18,41 @@ public class ListRunner {
     }
   }
 
+  public int getNumberOfBatches( int tasks, int threads ) {
+
+      if( tasks <= threads ) {
+          return 1;
+      }
+
+      return ( tasks % threads == 0 )? tasks/threads:(tasks/threads) + 1;
+  }
   public float startThreads(int n, BasicLinkedList list, RunMode runMode, int totalOperationsCount, SequentialLinkedList sequentialLinkedList) {
-      Runner runner = new Runner(n);
+
       long startTime = System.currentTimeMillis();
 
       // Pre-populate the given list so that read-dominated mode has something to
       // test.
       prePopulateList(list, sequentialLinkedList);
 
+      int numberOfBatches = getNumberOfBatches(totalOperationsCount, n);
+      int count=0;
+
+      while( count++ < numberOfBatches ) {
+
+          Runner runner = new Runner(n);
+          runThreads(runner, runMode, n, list, sequentialLinkedList);
+          runner.waitTillDone();
+          runner.shutDown();
+
+      }
+
+      long endTime = System.currentTimeMillis();
+      float totalTime = (float) (endTime - startTime) / 1000;
+
+      return totalTime;
+  }
+
+    public void runThreads( Runner runner, RunMode runMode, int noOfThreads, BasicLinkedList list, BasicLinkedList SequentialList ){
       int i = 0;
       Random random = new Random();
 
@@ -33,32 +60,23 @@ public class ListRunner {
       int deleteStart = insertEnd + 1;
       int deleteEnd = deleteStart + runMode.percentageOfDeletes;
 
-      while (i++ < totalOperationsCount) {
+      while (i++ < noOfThreads) {
         int randomInt = random.nextInt(100) + 1;
         int key = random.nextInt(RunParameters.MAX_KEY_SIZE.value) + 1;
 
         if (randomInt >= 1 && randomInt <= insertEnd) {
             runner.run( new BasicThread(i, list, "insert", key) );
-            sequentialLinkedList.insert(key);
+            SequentialList.insert(key);
         }
         else if (randomInt >= deleteStart && randomInt < deleteEnd) {
             runner.run( new BasicThread(i, list, "delete", key) );
-            sequentialLinkedList.delete(key);
+            SequentialList.delete(key);
         }
         else {
           runner.run( new BasicThread(i, list, "search", key) );
         }
-
       }
-      //System.out.println( "THreads yet to be completed="+runner.toBeCompletedCount() );
-      runner.waitTillDone();
-      runner.shutDown();
-
-      long endTime = System.currentTimeMillis();
-      float totalTime = (float) (endTime - startTime) / 1000;
-
-      return totalTime;
-  }
+    }
 
   public void run(int numberOfThreads, int totalOperationsCount) {
 
