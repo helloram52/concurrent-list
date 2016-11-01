@@ -1,5 +1,7 @@
 package com.multicore;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class FineGrainList implements BasicLinkedList {
   FineGrainNode head;
   FineGrainNode tail;

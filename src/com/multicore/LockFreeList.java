@@ -1,9 +1,11 @@
 package com.multicore;
 
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 
 public class LockFreeList implements BasicLinkedList {
   LockFreeNode head, tail;
+
 
   LockFreeList() {
     head = new LockFreeNode(Integer.MIN_VALUE);
@@ -43,7 +45,6 @@ public class LockFreeList implements BasicLinkedList {
   }
 
   public boolean insert(int key) {
-
     while(true) {
       Window window = find(head, key);
       LockFreeNode pred = window.pred, curr = window.curr;
@@ -62,7 +63,6 @@ public class LockFreeList implements BasicLinkedList {
 
 
   public boolean delete(int key) {
-
     boolean result = true;
     while(true) {
       Window window = find(head, key);
@@ -84,7 +84,6 @@ public class LockFreeList implements BasicLinkedList {
 
 
   public boolean search(int key) {
-
     boolean[] marked = {false};
     LockFreeNode curr = head;
     while( curr.getKey() < key ) {

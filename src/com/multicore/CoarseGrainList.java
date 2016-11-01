@@ -1,6 +1,8 @@
 package com.multicore;
 
-public class CoarseGrainList extends SequentialLinkedList {
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class CoarseGrainList extends SequentialLinkedList implements BasicLinkedList {
   private Lock lock;
   private Node head;
   private Node tail;
@@ -13,7 +15,6 @@ public class CoarseGrainList extends SequentialLinkedList {
   @Override
   public boolean insert(int insertKey) {
     lock.lock();
-
     try {
       return super.insert(insertKey);
     } finally {

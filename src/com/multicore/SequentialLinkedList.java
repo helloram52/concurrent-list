@@ -16,25 +16,25 @@ public class SequentialLinkedList implements BasicLinkedList {
 
     head.next = tail;
     tail.next = null;
-  }
-
-  @Override
-  public boolean insert(int insertKey) {
-    Node pred, curr;
-
-    pred = head;
-    curr = head.next;
-
-    // Traverse till we find the first key
-    // higher than or equal to tthe given key.
-    while (curr.key < insertKey ) {
-      pred = curr;
-      curr = pred.next;
     }
 
-    // We don't allow duplicate key inserts. So, just return.
-    if (curr.key == insertKey) {
-      return false;
+    @Override
+    public boolean insert(int insertKey) {
+      Node pred, curr;
+
+      pred = head;
+      curr = head.next;
+
+      // Traverse till we find the first key
+      // higher than or equal to tthe given key.
+      while (curr.key < insertKey ) {
+        pred = curr;
+        curr = pred.next;
+      }
+
+      // We don't allow duplicate key inserts. So, just return.
+      if (curr.key == insertKey) {
+        return false;
     }
 
     Node newNode = new Node(insertKey);

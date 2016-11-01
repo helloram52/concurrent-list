@@ -1,3 +1,6 @@
+/*
+ * Copyright (c) 2014 Cloudvisory LLC. All rights reserved.
+ */
 package com.multicore;
 
 /**
@@ -5,7 +8,7 @@ package com.multicore;
  * that allows you to monitor the number of submitted, failed and succeeded task, plus has the
  * ability to wait until all tasks are completed = there are no scheduled or running tasks.
  *
- * Created by Vadivel on 9/18/16.
+ * Created by vads on 9/18/16.
  * -- Reused parts from https://github.com/MatejTymes/JavaFixes
  */
 import java.util.concurrent.Callable;
@@ -29,11 +32,12 @@ public class Runner {
    * Constructs a runner with specific number of executor thread.
    *
    * @param threadCount number of executor threads
+   *
    */
-  public Runner(int threadCount) {
+  public Runner(int threadCount, int operationCountSize) {
     this.executor = newScheduledThreadPool(threadCount);
 
-    latch = new CountDownLatch(threadCount);
+    latch = new CountDownLatch(operationCountSize);
     failedToSubmit = new AtomicInteger();
     succeeded = new AtomicInteger();
     failed = new AtomicInteger();
@@ -62,7 +66,7 @@ public class Runner {
     return this;
   }
 
-  private Callable<Void> asMonitoredCallable(final Runnable task) {
+  private Callable<Void> asMonitoredCallable(Runnable task) {
     return new Callable<Void>() {
       @Override
       public Void call() throws Exception {

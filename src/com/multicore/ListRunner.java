@@ -18,14 +18,15 @@ public class ListRunner {
   }
 
   public float startThreads(int n, BasicLinkedList list, RunMode runMode, int totalOperationsCount) {
-      Runner runner = new Runner(n);
+      Runner runner = new Runner(n, totalOperationsCount);
       long startTime = System.currentTimeMillis();
 
       // Pre-populate the given list so that read-dominated mode has something to
       // test.
-      prePopulateList(list);
+      //prePopulateList(list);
 
       int i = 0;
+
       Random random = new Random();
 
       int insertEnd = runMode.percentageOfInserts;
@@ -47,7 +48,6 @@ public class ListRunner {
         }
 
       }
-
       runner.waitTillDone();
       runner.shutDown();
 
@@ -57,26 +57,29 @@ public class ListRunner {
       return totalTime;
   }
 
-  public void run(int numberOfThreads, int totalOperationsCount) {
+  public void run(int numberOfThreads, int totalOperationsCount, int runNumber) {
 
       float executionTime;
+
       // For each run, execute it for all the different modes.
       for (RunMode mode : RunMode.values()) {
 
         Utils.logWarning("Testing Coarse Grain List in  '" + mode.modeName + "' mode.");
         BasicLinkedList coarseGrainList = new CoarseGrainList();
         executionTime = startThreads(numberOfThreads, coarseGrainList, mode, totalOperationsCount);
-        Utils.logInfo("\t\tExecution Time: " + executionTime + " seconds.");
+        Utils.logInfo("Run #:" + runNumber + " Number of Threads: " + numberOfThreads + " List: CoarseGrain Mode: " + mode.modeName + " Execution Time: " + executionTime + " seconds.");
 
         Utils.logWarning("Testing Fine Grain List in  '" + mode.modeName + "' mode.");
         BasicLinkedList fineGrainList = new FineGrainList();
         executionTime = startThreads(numberOfThreads, fineGrainList, mode, totalOperationsCount);
-        Utils.logInfo("\t\tExecution Time: " + executionTime + " seconds.");
+        Utils.logInfo("Run #:" + runNumber + " Number of Threads: " + numberOfThreads + " List: FineGrain Mode: " + mode.modeName + " Execution Time: " + executionTime + " seconds.");
+//        Utils.logInfo("\t\tExecution Time: " + executionTime + " seconds.");
 
         Utils.logWarning("Testing Lock free List in  '" + mode.modeName + "' mode.");
         BasicLinkedList lockFreeList = new LockFreeList();
         executionTime = startThreads(numberOfThreads, lockFreeList, mode, totalOperationsCount);
-        Utils.logInfo("\t\tExecution Time: " + executionTime + " seconds.");
+        Utils.logInfo("Run #:" + runNumber + " Number of Threads: " + numberOfThreads + " List: LockFree Mode: " + mode.modeName + " Execution Time: " + executionTime + " seconds.");
+//        Utils.logInfo("\t\tExecution Time: " + executionTime + " seconds.");
       }
   }
 }

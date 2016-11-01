@@ -23,30 +23,31 @@ public class BasicThread implements Runnable {
   public void run() {
 
     boolean result;
+    String threadname = Thread.currentThread().getName();
     switch (operationName) {
       case "insert":
 
-        Utils.logInfo("Invoking OperationID: " + operationID );
+        // Utils.logInfo("Invoking OperationID: " + operationID );
         result = list.insert(key);
-        Utils.logInfo("OperationID: " + operationID +  " Insert(" + key + ") : " + result);
+        //Utils.logInfo(threadname + ": OperationID: " + operationID +  " Insert(" + key + ") : " + result);
         break;
 
       case "delete":
 
-        Utils.logInfo("Invoking OperationID: " + operationID );
+        // Utils.logInfo("Invoking OperationID: " + operationID );
         result = list.delete(key);
-        Utils.logInfo("OperationID: " + operationID +  " Delete(" + key + ") : " + result);
+        //Utils.logInfo(threadname + ": OperationID: " + operationID +  " Delete(" + key + ") : " + result);
         break;
 
       case "search":
 
-        Utils.logInfo("Invoking OperationID: " + operationID );
+        // Utils.logInfo("Invoking OperationID: " + operationID );
         result = list.search(key);
-        Utils.logInfo("OperationID: " + operationID +  " Search(" + key + ") : " + result);
+        //Utils.logInfo(threadname + ": OperationID: " + operationID +  " Search(" + key + ") : " + result);
         break;
 
       default:
-        Utils.logInfo("Invalid operation: " + operationName);
+        Utils.logInfo(threadname + ": Invalid operation: " + operationName);
 
     }
   }

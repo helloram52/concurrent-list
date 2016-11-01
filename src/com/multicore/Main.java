@@ -21,7 +21,7 @@ public class Main {
 
             for (int j = 1;j <= numberOfThreads;j++) {
                 Utils.logInfo("Number of threads: " + j);
-                new ListRunner().run(j, totalOperationsToPerform);
+                new ListRunner().run(j, totalOperationsToPerform, i);
             }
         }
     }
