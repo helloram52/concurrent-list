@@ -70,8 +70,8 @@ class FineGrainNode extends Node {
 }
 
 class LockFreeNode extends Node {
-  public int key;
-  public volatile AtomicMarkableReference<LockFreeNode> next;
+    public int key;
+    public volatile AtomicMarkableReference<LockFreeNode> next;
 
   LockFreeNode(int key) {
     super(key);

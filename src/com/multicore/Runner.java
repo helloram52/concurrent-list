@@ -1,6 +1,3 @@
-/*
- * Copyright (c) 2014 Cloudvisory LLC. All rights reserved.
- */
 package com.multicore;
 
 /**
